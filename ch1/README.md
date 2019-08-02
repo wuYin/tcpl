@@ -111,7 +111,7 @@ C 中的 char 类型其实是 short int，Go 中 rune 是 uint8 类似。
 
 ### 1.7 函数
 
-同一个函数的实现不能分散在多个 .c 源文件中，是操作系统层面出于加载编译支持。
+同一个函数的实现不能分散在多个 .c 源文件中，是操作系统层面出于加载编译不支持。
 
 函数原型的参数可以省略参数名，函数实现时参数类型默认是 int 可以省略：
 
@@ -160,9 +160,9 @@ extern FILE *__stdinp;
 extern FILE *__stdoutp;
 extern FILE *__stderrp;
  
-#define	stdin	  __stdinp	// 0
-#define	stdout	__stdoutp // 1
-#define	stderr	__stderrp // 2
+#define stdin	__stdinp  // 0
+#define stdout	__stdoutp // 1
+#define stderr	__stderrp // 2
 ```
 
 此外 *.h 中还有宏定义、符号常量等。
