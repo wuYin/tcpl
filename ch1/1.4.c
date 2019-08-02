@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// c 转 f
 main()
 {
 	float f, c;
@@ -10,7 +11,7 @@ main()
 	step = 20;
 
 	c = lower;
-	printf("%s\t%6s\n", "celsius", "fhar"); // %Ns valid too
+	printf("%s\t%6s\n", "celsius", "fhar"); // %Ns 也是右对齐
 	while (c <= upper)
 	{
 		f = c * 9.0 / 5.0 + 32.0;

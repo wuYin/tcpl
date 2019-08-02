@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-#define IN 1  // 在单词内
-#define OUT 0 // 在单词外
+#define IN 1
+#define OUT 0
 
-// 算法关键：设立标志位避开连续的空白符
+// 将输入以单词形式输出，即遇到空白符就将单词输出
+// 思路：和单词计数一样设立是否正在构建新单词的状态 state 变量
 main()
 {
 	int c, state;
@@ -11,20 +12,16 @@ main()
 
 	while ((c = getchar()) != EOF)
 	{
-		if (c == ' ' || c == '\t' || c == '\n')
+		// && 比 || 大一个优先级
+		if ((c == ' ' || c == '\t' || c == '\n') && state == IN)
 		{
-			if (state == IN)
-			{
-				state = OUT; // 单词结束
-				putchar('\n');
-			}
+			state = OUT;
+			putchar('\n');
 		}
 		else
 		{
-			if (state == OUT)
-			{
+			if (state == OUT) // 重新构建新单词
 				state = IN;
-			}
 			putchar(c);
 		}
 	}

@@ -1,18 +1,19 @@
 #include <stdio.h>
 
+// 试试打印非标准转义字符
 main()
 {
 	printf("n: \n");
 	printf("t1\tt2 \n");
 	printf("\"     \n");
 	printf("\\     \n");
-	printf("c: \c  \n");
-	printf(" b-\b    ");
+	printf("abc\b  \n"); //
+	printf("\7");		 // ASCII 的 7 BEL 蜂鸣声
+	printf("\xA");		 // LF 换行键 '\0' 也会发出蜂鸣声
 
-	// n:q
+	// n:
 	// t1	t2
 	// "
 	// \
-	// c: c   // \c is not a valid
-	//  b     // 退格即删除一个字符
+	// ab     // 退格即删除一个字符 c
 }

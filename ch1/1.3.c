@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// 打印带标题的温度转换表
 main()
 {
 	float f, c;

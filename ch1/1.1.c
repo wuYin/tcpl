@@ -1,7 +1,6 @@
 #include <stdio.h>
-
+// 试错
 main()
 {
-	// error: expected ';' after expression
-	printf("hello world")
+	printf("hello world") // error: expected ';' after expression
 }

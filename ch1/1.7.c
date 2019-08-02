@@ -1,6 +1,7 @@
 #include <stdio.h>
 
+// 输出 EOF 的值
 main()
 {
-	printf("%X\n", EOF); // FFFFFFFF // -1
+	printf("%d\n", EOF); // -1
 }

@@ -1,40 +1,15 @@
 #include <stdio.h>
 
-// // "" 是 char*
-// main()
-// {
-// 	int c;
-
-// 	while ((c = getchar()) != EOF)
-// 	{
-// 		if (c == ' ')
-// 		{
-// 			putchar(c);
-// 			while ((c = getchar()) == ' ')
-// 				;
-// 		}
-// 		putchar(c);
-// 	}
-// }
-
-// prev 记忆上一个字符
-#define NOBLANK '_'
-
+// 将输入复制到输出，合并其中的多个空格为一个
+// prev 或 cur 不为空格则输出 cur 即可
 main()
 {
-	int c, prev;
-
-	prev = NOBLANK;
-	while ((c = getchar()) != EOF)
+	int cur, prev;
+	prev = '_'; // 初始化为非空格字符，类似于单链表中的 dummy 节点
+	while ((cur = getchar()) != EOF)
 	{
-		if (c != ' ')
-		{
-			putchar(c);
-		}
-		if (c == ' ' && prev != ' ')
-		{
-			putchar(c);
-		}
-		prev = c;
+		if (cur != ' ' || prev != ' ')
+			putchar(cur);
+		prev = cur;
 	}
 }
