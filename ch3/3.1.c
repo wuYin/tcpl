@@ -16,7 +16,7 @@ int binSearch(int target, int nums[], int n)
     int r = n - 1;
     int mid = (l + r) / 2;
 
-    while (l <= r && nums[mid] != target) // 只要值不等就直接循环
+    while (l <= r && nums[mid] != target) // 只要值不等就直接循环 //
     {
         if (target < nums[mid])
             r = mid - 1;
